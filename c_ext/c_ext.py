@@ -121,7 +121,7 @@ class CFile(CodeFile):
 
         Gen_Cfile_path = os.path.join(buildpath, "CFile_%s.c" % location_str)
         cfile = open(Gen_Cfile_path, 'w')
-        cfile.write(text)
+        cfile.write(text.encode('utf-8'))
         cfile.close()
 
         matiec_CFLAGS = '"-I%s"' % os.path.abspath(self.GetCTRoot().GetIECLibPath())
